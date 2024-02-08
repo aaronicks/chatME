@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from account.models import User
 from account.forms import AddUserForm, EditUserForm
 from django.contrib import messages
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -98,7 +99,11 @@ def edit_user(request, uuid):
 
 		return redirect('/chat-admin/')
 
-
+@login_required
+def logout_user(request):
+	logout(request)
+	messages.success(request, 'You have been logout Successfully!')
+	return redirect('/chat-admin/')
 
 @login_required
 def add_user(request):

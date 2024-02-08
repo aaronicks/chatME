@@ -93,7 +93,7 @@ function onChatMessage(data) {
 											<div>
 
 											<div class="bg-gray-300 p-3 rounded-l-lg rounded-br-lg">
-												<p class="text-sm">user typing.....</p>
+												<p class="text-sm">client typing.....</p>
 											</div>
 
 												

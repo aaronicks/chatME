@@ -128,7 +128,7 @@ function onChatMessage(data) {
 											<div>
 
 											<div class="bg-gray-300 p-3 rounded-l-lg rounded-br-lg">
-												<p class="text-sm">Admin is typing....</p>
+												<p class="text-sm">admin is typing....</p>
 											</div>
 											</div>
 											<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 text-center pt-2">${data.initials}</div>
