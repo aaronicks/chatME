@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 import json
 from django.http import JsonResponse
@@ -10,8 +11,8 @@ from account.forms import AddUserForm, EditUserForm
 from django.contrib import messages
 from django.contrib.auth import logout
 
-# Create your views here.
 
+# Create your views here.
 
 @require_POST
 def create_room(request, uuid):
