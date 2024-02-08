@@ -32,7 +32,7 @@ const chatSubmitElement = document.querySelector('#chat_submit')
 Functions
 */ 
 
-function scrollToBottom(e) {
+function scrollToBottom() {
 	chatMessageElement.scrollTop = chatMessageElement.scrollHeight
 }
 
@@ -146,7 +146,7 @@ async function joinChatRoom(){
 	}
 
 	chatSocket.onopen = function(e) {
-		
+
 		console.log('onOpen - Chat Socket Was Open')
 
 		scrollToBottom()
