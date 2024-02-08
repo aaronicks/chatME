@@ -54,6 +54,7 @@ function getCookie(name){
 				break
 			}
 		}
+	
 	}
 	return cookieValue
 }
@@ -104,6 +105,8 @@ function onChatMessage(data) {
 											<div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 text-center pt-2">${data.initials}</div>
 										</div>`
 		}
+	} else if (data.type == 'users_update'){
+		chatMessageElement.innerHTML += '<p class="mt-2"> The Admin/Agent joined the chat!'
 	}
 	
 	scrollToBottom()

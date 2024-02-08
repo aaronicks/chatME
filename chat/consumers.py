@@ -20,6 +20,16 @@ class ChatConsumer(AsyncWebsocketConsumer):
 		await self.channel_layer.group_add(self.room_group_name, self.channel_name)
 		await self.accept()
 
+		# inform user here
+		if self.user.is_staff:
+			await self.channel_layer.group_send(
+				self.room_group_name,
+				{
+					'type':'users_update'
+			}
+		)
+
+
 
 	async def disconnect(self, close_code):
 
@@ -69,6 +79,14 @@ class ChatConsumer(AsyncWebsocketConsumer):
 			}))
 
 
+	async def users_update(self, event):
+
+		# send information to the (front end)
+		await self.send(text_data=json.dumps({
+
+				'type':'users_update'
+			}))
+
 	@sync_to_async
 	def get_room(self):
 		self.room = Room.objects.get(uuid=self.room_name)
@@ -76,6 +94,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
 	@sync_to_async
 	def set_room_closed(self):
+		self.room = Room.objects.get(uuid=self.room_name)
 		self.room.status = Room.CLOSED
 		self.room.save()
 
