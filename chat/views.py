@@ -100,7 +100,6 @@ def edit_user(request, uuid):
 
 
 
-
 @login_required
 def add_user(request):
 	
