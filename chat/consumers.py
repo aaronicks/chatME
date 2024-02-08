@@ -48,7 +48,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 		name = text_data_json['name']
 		agent = text_data_json.get('agent', '')
 
-		print("Recieve:", type )
+		
 
 		if type == 'message':
 			new_message = await self.create_message(name, message, agent)
@@ -65,7 +65,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 				}
 			)
 		elif type == 'update':
-			print('is update')
+
 			# send update to the room
 			await self.channel_layer.group_send(
 				self.room_group_name, 
