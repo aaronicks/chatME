@@ -1,8 +1,8 @@
 # ChatMe
 
 Github repo: https://github.com/aaronicks/chatME/tree/gh-pages
-URL:
-Admin Url:
+URL:pythonister01.pythonanywhere.com
+Admin Url:pythonister01.pythonanywhere.com/login/?next=/chat-admin/
 username: admin@gmail.com
 password: admin
 
